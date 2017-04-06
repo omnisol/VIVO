@@ -8,7 +8,7 @@ node {
             }
 
             dir('VIVO') {
-                git branch: 'omnisol-setup', url: 'git@github.com:omnisol/VIVO.git'
+                git branch: 'omnisol', url: 'git@github.com:omnisol/VIVO.git'
 
                 def realBuildFolder = "$REAL_JENKINS_HOME/workspace/$JOB_NAME/build"
                 sh "rm -rf $WORKSPACE/build && mkdir -p $WORKSPACE/build/home && mkdir -p $WORKSPACE/build/tomcat"
