@@ -29,7 +29,7 @@ node {
             }
 
             dir('build') {
-                def image = docker.build(imageName)
+                def image = docker.build(imageName, "--build-arg VIVO_VERSION=$version .")
                 image.push()
                 image.push('latest')
 
