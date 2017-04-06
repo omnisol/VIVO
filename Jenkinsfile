@@ -8,9 +8,10 @@ node {
             git branch: 'omnisol-setup', url: 'git@github.com:omnisol/VIVO.git'
 
             def buildFolder = "$REAL_JENKINS_HOME/workspace/$JOB_NAME/build"
+            sh "rm -rf $buildFolder"
 
             docker.build('vivo-build', '-f build/Dockerfile ..')
-            sh "docker run --rm -v $buildFolder/home:/usr/local/vivo/home -v $buildFolder/tomcat:/usr/local/tomcat vivo-build"
+            sh "docker run --rm --volumes-from maven -v $buildFolder/home:/usr/local/vivo/home -v $buildFolder/tomcat:/usr/local/tomcat vivo-build"
         }
     }
 
