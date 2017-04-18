@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY display "http://vitro.mannlib.cornell.edu/ontologies/display/1.1#">
+<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+
+<rdf:RDF xml:base="http://vitro.mannlib.cornell.edu/ontologies/display/1.1/"
+         xmlns:display="&display;"
+         xmlns:rdf="&rdf;">
+
+    <!--
+     ******************************************************************
+     data property custom list views
+     ****************************************************************** 
+    -->
+        
+    <rdf:Description rdf:about="http://vivoweb.org/ontology/core#researcherId">
+        <display:listViewConfigFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">listViewConfig-researcherId.xml</display:listViewConfigFile>
+    </rdf:Description>
+
+</rdf:RDF>
