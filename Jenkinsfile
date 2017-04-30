@@ -4,7 +4,7 @@ node {
     catchError {
         stage('Build') {
             dir('Vitro') {
-                git branch: 'maint-rel-1.9', url: 'git@github.com:omnisol/Vitro.git'
+                git branch: 'omnisol', url: 'git@github.com:omnisol/Vitro.git'
             }
 
             dir('VIVO') {
