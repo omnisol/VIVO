@@ -19,4 +19,12 @@
         <display:listViewConfigFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">listViewConfig-researcherId.xml</display:listViewConfigFile>
     </rdf:Description>
 
+    <rdf:Description rdf:about="http://vivoweb.org/ontology/core#eRACommonsId">
+        <display:listViewConfigFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">listViewConfig-eRACommonsId.xml</display:listViewConfigFile>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ARG_0000197">
+        <display:listViewConfigFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">listViewConfig-healthCareProviderId.xml</display:listViewConfigFile>
+    </rdf:Description>
+
 </rdf:RDF>
