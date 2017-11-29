@@ -1,0 +1,4 @@
+@prefix vitroDisplay: <http://vitro.mannlib.cornell.edu/ontologies/display/1.1#> .
+
+vitroDisplay:SearchIndex
+    vitroDisplay:excludeClass <http://vivoweb.org/ontology/core#NonFacultyAcademic> .
