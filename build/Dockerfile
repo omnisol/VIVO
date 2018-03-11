@@ -2,7 +2,7 @@ FROM omnisol/maven
 
 ENV VIVO_INSTALL_DIR /opt/vivo
 ENV VIVO_HOME /usr/local/vivo/home
-env CATALINA_HOME /usr/local/tomcat
+ENV CATALINA_HOME /usr/local/tomcat
 
 USER root
 COPY VIVO $VIVO_INSTALL_DIR/VIVO

@@ -14,7 +14,7 @@ node {
                 sh "rm -rf $WORKSPACE/build && mkdir -p $WORKSPACE/build/home && mkdir -p $WORKSPACE/build/tomcat"
 
                 docker.build('vivo-build', '-f build/Dockerfile ..')
-                sh "docker run --rm --volumes-from maven -v $realBuildFolder/home:/usr/local/vivo/home -v $realBuildFolder/tomcat:/usr/local/tomcat vivo-build"
+                sh "docker run --rm -v $realBuildFolder/home:/usr/local/vivo/home -v $realBuildFolder/tomcat:/usr/local/tomcat vivo-build"
                 sh "cp Dockerfile build/server.xml build/docker-entrypoint.sh $WORKSPACE/build"
             }
         }
@@ -37,9 +37,4 @@ node {
             }
         }
     }
-}
-
-def imageExists(String imageName) {
-    def result = sh returnStatus: true, script: "docker pull $imageName"
-    return result == 0
 }
