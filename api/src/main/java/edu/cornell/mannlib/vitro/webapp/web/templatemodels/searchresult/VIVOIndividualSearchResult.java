@@ -22,12 +22,10 @@ public class VIVOIndividualSearchResult extends IndividualSearchResult {
             + "SELECT DISTINCT ?email ?title  \n"
             + "WHERE {  \n"
             + "    ?subject obo:ARG_2000028 ?vIndividual .  \n"
-            + "    OPTIONAL { ?vIndividual vcard:hasEmail ?vEmail . \n"
-            + "               ?vEmail vcard:email ?email . \n"
-            + "    } \n"
-            + "    OPTIONAL { ?vIndividual vcard:hasTitle ?vTitle . \n"
-            + "               ?vTitle vcard:title ?title . \n"
-            + "    } \n"
+            + "    ?vIndividual vcard:hasEmail ?vEmail . \n"
+            + "    ?vEmail vcard:email ?email . \n"
+            + "    ?vIndividual vcard:hasTitle ?vTitle . \n"
+            + "    ?vTitle vcard:title ?title . \n"
             + "} "  ;
     
     private String email = "";

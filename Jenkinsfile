@@ -8,7 +8,7 @@ node {
             }
 
             dir('VIVO') {
-                git branch: 'omnisol', url: 'git@github.com:omnisol/VIVO.git'
+                git branch: 'test', url: 'git@github.com:omnisol/VIVO.git'
 
                 def realBuildFolder = "$REAL_JENKINS_HOME/workspace/$JOB_NAME/build"
                 sh "rm -rf $WORKSPACE/build && mkdir -p $WORKSPACE/build/home && mkdir -p $WORKSPACE/build/tomcat"
@@ -20,8 +20,8 @@ node {
         }
 
         stage('Image') {
-            def revision = readFile 'VIVO/revision'
-            def version = "1.9.2-$revision"
+            def revision = "5"
+            def version = "1.9.2-test$revision"
             def imageName = "omnisol/vivo:$version"
 
             if (imageExists(imageName)) {
@@ -31,7 +31,7 @@ node {
             dir('build') {
                 def image = docker.build(imageName, "--build-arg VIVO_VERSION=$version .")
                 image.push()
-                image.push('latest')
+//                image.push('latest')
 
                 currentBuild.displayName += " - $version"
             }
