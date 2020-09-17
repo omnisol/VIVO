@@ -1,4 +1,4 @@
-FROM omnisol/tomcat
+FROM omnisol/tomcat:9
 
 ARG VIVO_VERSION
 ENV VIVO_VERSION $VIVO_VERSION
