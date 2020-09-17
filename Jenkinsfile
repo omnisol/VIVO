@@ -4,11 +4,11 @@ node {
     catchError {
         stage('Build') {
             dir('Vitro') {
-                git branch: 'omnisol', url: 'git@github.com:omnisol/Vitro.git'
+                git branch: 'omnisol', url: 'git@bitbucket.org:omnisol-code/vitro.git'
             }
 
             dir('VIVO') {
-                git branch: 'omnisol', url: 'git@github.com:omnisol/VIVO.git'
+                git branch: 'tomcat9', url: 'git@bitbucket.org:omnisol-code/vivo.git'
 
                 def realBuildFolder = "$REAL_JENKINS_HOME/workspace/$JOB_NAME/build"
                 sh "rm -rf $WORKSPACE/build && mkdir -p $WORKSPACE/build/home && mkdir -p $WORKSPACE/build/tomcat"
