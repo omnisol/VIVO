@@ -22,19 +22,12 @@ node {
         stage('Image') {
             def revision = readFile 'VIVO/revision'
             def version = "1.9.2-$revision"
-            def imageName = "omnisol/vivo:$version"
-
-            if (imageExists(imageName)) {
-                error "Image $imageName already exists"
-            }
 
             dir('build') {
-                def image = docker.build(imageName, "--build-arg VIVO_VERSION=$version .")
-                image.push()
-                image.push('latest')
-
-                currentBuild.displayName += " - $version"
+                image.build(name: "omnisol/vivo", version: version)
             }
+
+            currentBuild.displayName += " - $version"
         }
     }
 }
